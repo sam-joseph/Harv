@@ -6,7 +6,7 @@ var body_parser = require('body-parser');
 const app = exp();
 
 //server listen
-app.listen(8080,function(){
+app.listen(3000,function(){
     console.log("server running")
 });
 
