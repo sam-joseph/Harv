@@ -1,0 +1,19 @@
+{
+  "name": "try",
+  "version": "1.0.0",
+  "description": "just for try",
+  "main": "index.js",
+  "scripts": {
+    "test": "just try"
+  },
+  "keywords": [
+    "t"
+  ],
+  "author": "sam",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
