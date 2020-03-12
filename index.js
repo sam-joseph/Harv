@@ -40,7 +40,7 @@ else
 {
    console.log("connection failed"); 
 }
-app.get('/register',function(req,res){
+app.post('/register',function(req,res){
     res.send(' page is ')
 });
 app.post('/',function(req,res){
