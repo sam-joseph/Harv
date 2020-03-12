@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node index",
     "heroku-postbuild": "npm install"
-
   },
   "keywords": [
     "t"

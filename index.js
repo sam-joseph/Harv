@@ -1,7 +1,7 @@
 //Declare variables
-var exp = require('express');
-var mysql = require('mysql');
-var body_parser = require('body-parser');
+const exp = require('express');
+const mysql = require('mysql');
+const body_parser = require('body-parser');
 
 const app = exp();
 
@@ -40,14 +40,16 @@ else
 {
    console.log("connection failed"); 
 }
+
 app.get('/',function(req,res){
     res.send(' page is ')
 });
-app.get('/register',function(req,res){
+
+app.post('/register',function(req,res){
 console.log("register trigger");
-res.send("register")
-app.post('/r',function(r,re){
-    res.send("execute")
+//res.send("register")
+//app.post('/r',function(r,re){
+    //res.send("execute")
     //get details from users
     var username = req.body.name;
     var emailid = req.body.email;
@@ -103,12 +105,20 @@ app.post('/r',function(r,re){
 //});
         })
     
-})
+//})
 
 //login
 app.get("/login",function(req,res){
+    res.sendFile(__dirname + '/login.html');
+    //res.send('sam');
+})
+app.post("/auth",function(req,res){
     var username = req.body.name;
     var password = req.body.password;
+    //res.send("login trigged")
+    console.log("login trigged")
+    console.log(username)
+    console.log(password)
 con.query("select * from U42YZEoduq.users where username ='"+username+"' ",function(err,resu){
     if(err){
         throw err;
@@ -187,6 +197,41 @@ throw error;
                 console.log('querry executed')
             }
         })
+    }
+})
+*/
+/*
+var username = req.body.name;
+    var password = req.body.password;
+con.query("select * from U42YZEoduq.users where username ='"+username+"' ",function(err,resu){
+    if(err){
+        throw err;
+    }
+    else
+    {
+        if(resu.length)
+        {
+            con.query("select * from U42YZEoduq.users where username='"+username+"' and password='"+password+"'",function(e,r){
+                if(e){
+                    throw e;
+                }
+                else
+                {
+                    if(r.length){
+                    res.send("open account")
+                    console.log("open account")
+                    }
+                    else{
+                        res.send("incorrect passwored")
+                        console.log("incorrect password")
+                    }
+                }
+            })
+        }
+        else{
+            console.log("user not registered")
+            res.send("user not registered")
+        }
     }
 })
 */
