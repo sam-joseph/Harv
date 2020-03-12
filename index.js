@@ -40,12 +40,12 @@ else
 {
    console.log("connection failed"); 
 }
-app.get('/',function(req,res){
+app.get('/register',function(req,res){
     res.send(' page is ')
 });
-app.post('/register',function(req,res){
+app.post('/',function(req,res){
 console.log("register trigger");
-
+res.send("register")
     //get details from users
     var username = req.body.name;
     var emailid = req.body.email;
