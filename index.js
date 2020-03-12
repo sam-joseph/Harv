@@ -40,7 +40,9 @@ else
 {
    console.log("connection failed"); 
 }
-
+app.get('/',function(req,res){
+    res.send(' page is ')
+});
 app.post('/register',function(req,res){
 console.log("register trigger");
 
