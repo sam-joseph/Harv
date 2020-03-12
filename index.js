@@ -109,7 +109,7 @@ console.log("register trigger");
 
 //login
 app.get("/login",function(req,res){
-    res.sendFile(__dirname + '/login.html');
+    res.sendFile(__dirname + '/harv/lib/main.dart');
     //res.send('sam');
 })
 app.post("/auth",function(req,res){
