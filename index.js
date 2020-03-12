@@ -43,9 +43,11 @@ else
 app.get('/',function(req,res){
     res.send(' page is ')
 });
-app.post('/register',function(req,res){
+app.get('/register',function(req,res){
 console.log("register trigger");
 res.send("register")
+app.post('/r',function(r,re){
+    res.send("execute")
     //get details from users
     var username = req.body.name;
     var emailid = req.body.email;
@@ -99,11 +101,12 @@ res.send("register")
     //  }
     //con.end();
 //});
+        })
     
 })
 
 //login
-app.post("/login",function(req,res){
+app.get("/login",function(req,res){
     var username = req.body.name;
     var password = req.body.password;
 con.query("select * from U42YZEoduq.users where username ='"+username+"' ",function(err,resu){
