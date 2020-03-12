@@ -6,7 +6,9 @@ var body_parser = require('body-parser');
 const app = exp();
 
 //server listen
-app.listen(3000,function(){
+var port_number = app.listen(process.env.PORT || 3000);
+//app.listen(port_number);
+app.listen(port_number,function(){
     console.log("server running")
 });
 
